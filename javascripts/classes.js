@@ -1,3 +1,5 @@
+"use strict";
+
 var Gauntlet = (function(gauntletClass) {
 
   gauntletClass.GuildHall = {};
@@ -14,7 +16,7 @@ var Gauntlet = (function(gauntletClass) {
 
     this.toString = function() {
       return this.name;
-    }
+    };
   };
 
   /*
@@ -116,4 +118,4 @@ var Gauntlet = (function(gauntletClass) {
 
   return gauntletClass;
 
-}(Gauntlet || {}))
+}(Gauntlet || {}));
