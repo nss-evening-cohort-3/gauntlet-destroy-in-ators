@@ -1,9 +1,6 @@
-/*
-  TODO: Modularize this code with IIFE or Browserify
- */
 var Gauntlet = (function(gauntletClass) {
 
-  gauntletClass.GuildHall = {};
+  var GuildHall = {};
 
   /*
     Base function for a player, or enemy, class (profession)
@@ -31,7 +28,7 @@ var Gauntlet = (function(gauntletClass) {
     this.healthBonus = 20;
     this.strengthBonus = 10;
   };
-  gauntletClass.GuildHall.Fighter.prototype = new Gauntlet.GuildHall.PlayerClass();
+  gauntletClass.GuildHall.Fighter.prototype = new gauntletClass.GuildHall.PlayerClass();
 
 
   gauntletClass.GuildHall.Warrior = function() {
@@ -39,7 +36,7 @@ var Gauntlet = (function(gauntletClass) {
     this.healthBonus = this.healthBonus + 25;
     this.strengthBonus = this.strengthBonus + 30;
   };
-  Gauntlet.GuildHall.Warrior.prototype = new Gauntlet.GuildHall.Fighter();
+  gauntletClass.GuildHall.Warrior.prototype = new gauntletClass.GuildHall.Fighter();
 
 
   gauntletClass.GuildHall.Valkyrie = function() {
@@ -47,7 +44,7 @@ var Gauntlet = (function(gauntletClass) {
     this.healthBonus = this.healthBonus + 20;
     this.strengthBonus = this.strengthBonus + 10;
   };
-  gauntletClass.GuildHall.Valkyrie.prototype = new Gauntlet.GuildHall.Fighter();
+  gauntletClass.GuildHall.Valkyrie.prototype = new gauntletClass.GuildHall.Fighter();
 
 
   gauntletClass.GuildHall.Berserker = function() {
@@ -55,7 +52,7 @@ var Gauntlet = (function(gauntletClass) {
     this.healthBonus = this.healthBonus + 35;
     this.strengthBonus = this.strengthBonus + 20;
   };
-  gauntletClass.GuildHall.Berserker.prototype = new Gauntlet.GuildHall.Fighter();
+  gauntletClass.GuildHall.Berserker.prototype = new gauntletClass.GuildHall.Fighter();
 
 
   gauntletClass.GuildHall.Monk = function() {
@@ -63,7 +60,7 @@ var Gauntlet = (function(gauntletClass) {
     this.healthBonus = this.healthBonus + 10;
     this.strengthBonus = this.strengthBonus + 40;
   };
-  gauntletClass.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
+  gauntletClass.GuildHall.Monk.prototype = new gauntletClass.GuildHall.Fighter();
 
 
   /*
@@ -80,7 +77,7 @@ var Gauntlet = (function(gauntletClass) {
     this.strengthBonus = this.strengthBonus - 20;
     this.intelligenceBonus = this.intelligenceBonus + 20;
   };
-  gauntletClass.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
+  gauntletClass.GuildHall.Mage.prototype = new gauntletClass.GuildHall.PlayerClass();
 
 
   gauntletClass.GuildHall.Shaman = function() {
@@ -89,7 +86,7 @@ var Gauntlet = (function(gauntletClass) {
     this.strengthBonus = this.strengthBonus - 10;
     this.intelligenceBonus = this.intelligenceBonus + 20;
   };
-  gauntletClass.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
+  gauntletClass.GuildHall.Shaman.prototype = new gauntletClass.GuildHall.Mage();
 
 
   gauntletClass.GuildHall.Wizard = function() {
@@ -98,7 +95,7 @@ var Gauntlet = (function(gauntletClass) {
     this.strengthBonus = this.strengthBonus - 25;
     this.intelligenceBonus = this.intelligenceBonus + 40;
   };
-  gauntletClass.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
+  gauntletClass.GuildHall.Wizard.prototype = new gauntletClass.GuildHall.Mage();
 
 
   gauntletClass.GuildHall.Conjurer = function() {
@@ -106,7 +103,7 @@ var Gauntlet = (function(gauntletClass) {
     this.strengthBonus = this.strengthBonus - 10;
     this.intelligenceBonus = this.intelligenceBonus + 10;
   };
-  gauntletClass.GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
+  gauntletClass.GuildHall.Conjurer.prototype = new gauntletClass.GuildHall.Mage();
 
 
   gauntletClass.GuildHall.Sorcerer = function() {
@@ -115,7 +112,7 @@ var Gauntlet = (function(gauntletClass) {
     this.strengthBonus = this.strengthBonus - 20;
     this.intelligenceBonus = this.intelligenceBonus + 30;
   };
-  gauntletClass.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
+  gauntletClass.GuildHall.Sorcerer.prototype = new gauntletClass.GuildHall.Mage();
 
   return gauntletClass;
 
