@@ -1,6 +1,6 @@
 var Gauntlet = (function(gauntletClass) {
 
-  var GuildHall = {};
+  gauntletClass.GuildHall = {};
 
   /*
     Base function for a player, or enemy, class (profession)
