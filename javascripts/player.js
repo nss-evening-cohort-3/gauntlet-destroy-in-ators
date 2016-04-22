@@ -5,6 +5,9 @@
  */
 var Gauntlet = (function(originalGauntlet){
 
+// Added private variable to store the created players
+  var createdPlayers = {};
+
   originalGauntlet.Combatants = {};
 
   /*
@@ -90,8 +93,18 @@ var Gauntlet = (function(originalGauntlet){
     this.intelligence = this.intelligence -20;
     this.strength = this.strength + 30;
   };
-
   originalGauntlet.Combatants.Monster.prototype = new originalGauntlet.Combatants.Player();
+
+// Allows access to the created players variable
+  originalGauntlet.getPlayers = function() {
+    return createdPlayers;
+  };
+
+// Adds players to the created players private variable
+  originalGauntlet.setPlayers = function(newlyCreatedPlayer) {
+    createdPlayers[newlyCreatedPlayer.species] = newlyCreatedPlayer;
+  };
+
 
   return originalGauntlet;
 
