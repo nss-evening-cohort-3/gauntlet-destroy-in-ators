@@ -32,34 +32,52 @@ $(document).ready(function() {
     $("#battleName").append(warrior.name);
   })
 
-  $("#classChoice").on("click", function() {
+  $(".classChoice").on("click", function() {
     var humanClass = this.id
 
     switch(humanClass) {
-      case "Warrior":
+      case "warrior":
         warrior.setClass(new Warrior());
         break;
-      case "Valkyrie":  
+      case "valkyrie":  
         warrior.setClass(new Valkyrie());
         break;
-      case "Berserker":  
+      case "berserker":  
         warrior.setClass(new Berserker());
         break;
-      case "Monk":  
+      case "monk":  
         warrior.setClass(new Monk());
         break;
-      case "Wizard":  
+      case "wizard":  
         warrior.setClass(new Wizard());
         break;
-      case "Sorcerer":  
+      case "sorcerer":  
         warrior.setClass(new Sorcerer());
         break;
-      case "Conjurer":  
+      case "conjurer":  
         warrior.setClass(new Conjurer());
         break;    
         console.log("Player", warrior)      
     }
   })
+
+  $(".weaponClass").on("click", function() {
+    var pickWeapon = this.id
+
+    switch(pickWeapon) {
+      case "dagger":
+        warrior.setWeapon(new Dagger());
+        break;
+      case "broadSword":
+        warrior.setWeapon(new BroadSword());
+        break;
+      case "warAxe":
+        warrior.setWeapon(new WarAxe());
+        break;
+    }
+  })
+
+  $
   
   /*
     When any button with card__link class is clicked,
