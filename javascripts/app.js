@@ -38,33 +38,12 @@ console.log("spell: ", spell.toString());
   $(".classChoice").on("click", function() {
     var humanClass = this.id
 
-    switch(humanClass) {
-      case "Warrior":
-        warrior.setClass(humanClass);
-        break;
-      case "Valkyrie":  
-        warrior.setClass(humanClass);
-        break;
-      case "Berserker":  
-        warrior.setClass(humanClass);
-        break;
-      case "Monk":  
-        warrior.setClass(humanClass);
-        break;
-      case "Wizard":  
-        warrior.setClass(humanClass);
-        break;
-      case "Sorcerer":  
-        warrior.setClass(humanClass);
-        break;
-      case "Conjurer":  
-        warrior.setClass(humanClass);
-        break;
-      case "Surprise":
-        warrior.generateClass();
-        break;
+if (humanClass === "Surprise") {
+   warrior.generateClass();
+} else {
+   warrior.setClass(humanClass);
+}
 
-    }
       console.log("Player", warrior)      
   })
 
