@@ -181,16 +181,46 @@
       </div>
     </section>
 
-    <section id="battleground" class="card card--battleground"></section>
+    <section id="battleground" class="card card--battleground">
+      <div class="card__prompt">
+        <div>Welcome to the Battleground</div>
+      </div>
+
+      <div class="battleground-stats">
+        <div id="human-data"></div>
+        <div id="monster-data"></div>
+      </div>
+        <div id="attack-text">Let the Battle Begin!</div>
+
+      <div class="card__button">
+
+        <a id="attack-button" class="card__link btn btn--big btn--orange" 
+           href="#" 
+           next="">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Attack!</span>
+        </a>
+
+
+        <a class="card__link btn btn--big btn--orange" 
+           href="#" 
+           next="give_up">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Give Up!</span>
+        </a>
+      </div>
+
+    </section>
 
   </article>
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="javascripts/player.js"></script>
   <script src="javascripts/weapons.js"></script>
   <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
-  <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
+  <script src="javascripts/attacks.js"></script>
   <script src="javascripts/app.js"></script>
 
 </body>
