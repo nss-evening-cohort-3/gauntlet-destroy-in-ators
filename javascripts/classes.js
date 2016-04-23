@@ -56,7 +56,6 @@ var Gauntlet = (function(gauntletClass) {
   };
   gauntletClass.GuildHall.Berserker.prototype = new gauntletClass.GuildHall.Fighter();
 
-
   gauntletClass.GuildHall.Monk = function() {
     this.name = "Monk";
     this.healthBonus = this.healthBonus + 10;
@@ -64,6 +63,38 @@ var Gauntlet = (function(gauntletClass) {
   };
   gauntletClass.GuildHall.Monk.prototype = new gauntletClass.GuildHall.Fighter();
 
+  /*
+      CRIMINAL CLASSES
+        - Thief
+        - Ninja
+        - Assasin
+   */  
+gauntletClass.GuildHall.Criminal= function() {
+    this.healthBonus = 5;
+    this.strengthBonus = 5;
+  };
+  gauntletClass.GuildHall.Criminal.prototype = new gauntletClass.GuildHall.PlayerClass();
+  
+  gauntletClass.GuildHall.Thief = function() {
+    this.name = "Thief";
+    this.healthBonus = this.healthBonus + 10;
+    this.strengthBonus = this.strengthBonus + 20;
+  };
+  gauntletClass.GuildHall.Thief.prototype = new gauntletClass.GuildHall.Criminal();
+
+ gauntletClass.GuildHall.Ninja = function() {
+    this.name = "Ninja";
+    this.healthBonus = this.healthBonus + 30;
+    this.strengthBonus = this.strengthBonus + 20;
+  };
+  gauntletClass.GuildHall.Ninja.prototype = new gauntletClass.GuildHall.Criminal();
+
+  gauntletClass.GuildHall.Assasin = function() {
+    this.name = "Assasin";
+    this.healthBonus = this.healthBonus + 5;
+    this.strengthBonus = this.strengthBonus + 20;
+  };
+  gauntletClass.GuildHall.Assasin.prototype = new gauntletClass.GuildHall.Criminal();
 
   /*
       MAGICAL CLASSES
