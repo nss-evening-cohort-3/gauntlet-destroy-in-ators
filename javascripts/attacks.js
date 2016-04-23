@@ -47,16 +47,14 @@ var Gauntlet = (function(originalAttacks){
 // Reduces the overall health of the enemy after the attack calculation is completed
     currentEnemy.health = currentEnemy.health - overallDamage;
 
-    if (currentEnemy.health <= 0) {
-      currentEnemy.health = 0;
-    }
-
 // Checks to see if the health of the enemy is at or below 0 and changes the reporting string acordingly.
     if (currentEnemy.health <= 0) {
       reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage!<br>`;
       reportStrings.attackString += `${currentEnemy.species} ${currentEnemy.class.name} has died!`;
-      reportStrings.healthString = `No Health is Left!`;
-
+      reportStrings.healthString = `No Health is Left! You are dead`; 
+      currentEnemy.health = 0;
+      $("#attack-button").attr("disabled", "disabled"); 
+      $("#attack-button").off();
     } else {
 
       reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage!`;
@@ -70,7 +68,7 @@ var Gauntlet = (function(originalAttacks){
     if (attackButtonClicked && (currentEnemy.health > 0)) {
       setTimeout(function() { 
         Gauntlet.weaponAttack(false);
-      }, 2500);
+      }, 100);
     }
 
     return reportStrings;
