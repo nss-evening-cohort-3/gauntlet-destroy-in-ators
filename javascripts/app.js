@@ -60,12 +60,12 @@ console.log("spell: ", spell.toString());
       case "conjurer":  
         warrior.setClass(new Gauntlet.GuildHall.Conjurer());
         break;
-      case "surprise"
+      case "surprise":
         warrior.generateClass();
         break;
-          
-        console.log("Player", warrior)      
+
     }
+      console.log("Player", warrior)      
   })
 
   $(".weaponClass").on("click", function() {
@@ -82,6 +82,7 @@ console.log("spell: ", spell.toString());
         warrior.setWeapon(new Gauntlet.WarAxe());
         break;
     }
+    console.log("weapon", warrior);
   })
   
   /*
