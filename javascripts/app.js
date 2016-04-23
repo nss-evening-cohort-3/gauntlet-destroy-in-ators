@@ -39,28 +39,28 @@ console.log("spell: ", spell.toString());
     var humanClass = this.id
 
     switch(humanClass) {
-      case "warrior":
+      case "Warrior":
         warrior.setClass(humanClass);
         break;
-      case "valkyrie":  
+      case "Valkyrie":  
         warrior.setClass(humanClass);
         break;
-      case "berserker":  
+      case "Berserker":  
         warrior.setClass(humanClass);
         break;
-      case "monk":  
+      case "Monk":  
         warrior.setClass(humanClass);
         break;
-      case "wizard":  
+      case "Wizard":  
         warrior.setClass(humanClass);
         break;
-      case "sorcerer":  
+      case "Sorcerer":  
         warrior.setClass(humanClass);
         break;
-      case "conjurer":  
+      case "Conjurer":  
         warrior.setClass(humanClass);
         break;
-      case "surprise":
+      case "Surprise":
         warrior.generateClass();
         break;
 
