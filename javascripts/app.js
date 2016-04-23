@@ -6,11 +6,10 @@ $(document).ready(function() {
   Test code to generate a human player and an orc player
  */
 var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new Gauntlet.WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+// warrior.setWeapon(new Gauntlet.WarAxe());
+// warrior.generateClass();  // This will be used for "Surprise me" option
+// console.log(warrior.toString());
 Gauntlet.setPlayers(warrior);
-
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
@@ -30,6 +29,62 @@ console.log("spell: ", spell.toString());
    */
   $("#player-setup").show();
 
+  // Display Name
+  $("#nameChoice").on("click", function() {
+    warrior.name = $("#player-name").val();
+    $("#battleName").append(warrior.name);
+  });
+
+  $(".classChoice").on("click", function() {
+    var humanClass = this.id
+
+    switch(humanClass) {
+      case "warrior":
+        warrior.setClass(humanClass);
+        break;
+      case "valkyrie":  
+        warrior.setClass(humanClass);
+        break;
+      case "berserker":  
+        warrior.setClass(humanClass);
+        break;
+      case "monk":  
+        warrior.setClass(humanClass);
+        break;
+      case "wizard":  
+        warrior.setClass(humanClass);
+        break;
+      case "sorcerer":  
+        warrior.setClass(humanClass);
+        break;
+      case "conjurer":  
+        warrior.setClass(humanClass);
+        break;
+      case "surprise":
+        warrior.generateClass();
+        break;
+
+    }
+      console.log("Player", warrior)      
+  })
+
+  $(".weaponClass").on("click", function() {
+    var pickWeapon = this.id
+
+    switch(pickWeapon) {
+      case "dagger":
+        warrior.setWeapon(new Gauntlet.Dagger());
+        break;
+      case "broadSword":
+        warrior.setWeapon(new Gauntlet.BroadSword());
+        break;
+      case "warAxe":
+        warrior.setWeapon(new Gauntlet.WarAxe());
+        break;
+    }
+    console.log("weapon", warrior);
+  })
+  
   /*
     When any button with card__link class is clicked,
     move on to the next view.
