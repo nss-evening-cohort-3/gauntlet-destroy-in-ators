@@ -9,10 +9,6 @@ var warrior = new Gauntlet.Combatants.Human();
 // warrior.setWeapon(new Gauntlet.WarAxe());
 // warrior.generateClass();  // This will be used for "Surprise me" option
 // console.log(warrior.toString());
-
-warrior.setWeapon(new Gauntlet.WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
 Gauntlet.setPlayers(warrior);
 
 var orc = new Gauntlet.Combatants.Orc();
@@ -44,26 +40,30 @@ console.log("spell: ", spell.toString());
 
     switch(humanClass) {
       case "warrior":
-        warrior.setClass(new Warrior());
+        warrior.setClass(new Gauntlet.GuildHall.Warrior());
         break;
       case "valkyrie":  
-        warrior.setClass(new Valkyrie());
+        warrior.setClass(new Gauntlet.GUildHall.Valkyrie());
         break;
       case "berserker":  
-        warrior.setClass(new Berserker());
+        warrior.setClass(new Gauntlet.GuildHall.Berserker());
         break;
       case "monk":  
-        warrior.setClass(new Monk());
+        warrior.setClass(new Gauntlet.GuildHall.Monk());
         break;
       case "wizard":  
-        warrior.setClass(new Wizard());
+        warrior.setClass(new Gauntlet.GuildHall.Wizard());
         break;
       case "sorcerer":  
-        warrior.setClass(new Sorcerer());
+        warrior.setClass(new Gauntlet.GuildHall.Sorcerer());
         break;
       case "conjurer":  
-        warrior.setClass(new Conjurer());
-        break;    
+        warrior.setClass(new Gauntlet.GuildHall.Conjurer());
+        break;
+      case "surprise"
+        warrior.generateClass();
+        break;
+          
         console.log("Player", warrior)      
     }
   })
@@ -73,18 +73,16 @@ console.log("spell: ", spell.toString());
 
     switch(pickWeapon) {
       case "dagger":
-        warrior.setWeapon(new Dagger());
+        warrior.setWeapon(new Gauntlet.Dagger());
         break;
       case "broadSword":
-        warrior.setWeapon(new BroadSword());
+        warrior.setWeapon(new Gauntlet.BroadSword());
         break;
       case "warAxe":
-        warrior.setWeapon(new WarAxe());
+        warrior.setWeapon(new Gauntlet.WarAxe());
         break;
     }
   })
-
-  $
   
   /*
     When any button with card__link class is clicked,
