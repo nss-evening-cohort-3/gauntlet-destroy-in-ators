@@ -33,32 +33,32 @@ console.log("spell: ", spell.toString());
   $("#nameChoice").on("click", function() {
     warrior.name = $("#player-name").val();
     $("#battleName").append(warrior.name);
-  })
+  });
 
   $(".classChoice").on("click", function() {
     var humanClass = this.id
 
     switch(humanClass) {
       case "warrior":
-        warrior.setClass(new Gauntlet.GuildHall.Warrior());
+        warrior.setClass(humanClass);
         break;
       case "valkyrie":  
-        warrior.setClass(new Gauntlet.GUildHall.Valkyrie());
+        warrior.setClass(humanClass);
         break;
       case "berserker":  
-        warrior.setClass(new Gauntlet.GuildHall.Berserker());
+        warrior.setClass(humanClass);
         break;
       case "monk":  
-        warrior.setClass(new Gauntlet.GuildHall.Monk());
+        warrior.setClass(humanClass);
         break;
       case "wizard":  
-        warrior.setClass(new Gauntlet.GuildHall.Wizard());
+        warrior.setClass(humanClass);
         break;
       case "sorcerer":  
-        warrior.setClass(new Gauntlet.GuildHall.Sorcerer());
+        warrior.setClass(humanClass);
         break;
       case "conjurer":  
-        warrior.setClass(new Gauntlet.GuildHall.Conjurer());
+        warrior.setClass(humanClass);
         break;
       case "surprise":
         warrior.generateClass();
