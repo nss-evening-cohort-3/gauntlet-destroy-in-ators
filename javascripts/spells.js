@@ -5,6 +5,8 @@
  */
 var Gauntlet = (function(originalSpell){
 
+  var possibleSpells = [];
+
   originalSpell.SpellBook = {};
 
   /*
