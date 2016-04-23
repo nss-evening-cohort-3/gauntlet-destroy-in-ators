@@ -55,7 +55,7 @@ var Gauntlet = (function(originalAttacks){
     if (currentEnemy.health <= 0) {
       reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage!<br>`;
       reportStrings.attackString += `${currentEnemy.species} ${currentEnemy.class.name} has died!`;
-      reportStrings.healthString = `No Heath is Left!`;
+      reportStrings.healthString = `No Health is Left!`;
 
     } else {
 
