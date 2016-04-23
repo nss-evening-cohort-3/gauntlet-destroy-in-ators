@@ -45,6 +45,12 @@ console.log("spell: ", spell.toString());
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
+      case "card--battleground":
+        moveAlong = ($("#player-name").val() !== "");
+        Gauntlet.updateBattlefieldDOM({"attackString": "Let the battle Begin", "healthString": ""});
+        break;
+      case "give_up":
+        alert("You gave up fool!");
     }
 
     if (moveAlong) {
@@ -61,5 +67,12 @@ console.log("spell: ", spell.toString());
     $(".card").hide();
     $("." + previousCard).show();
   });
+
+  $("#attack-button").click(function(e) {
+    var domStrings = Gauntlet.weaponAttack(true);
+    Gauntlet.updateBattlefieldDOM(domStrings);
+  });
+
+
 
 });
