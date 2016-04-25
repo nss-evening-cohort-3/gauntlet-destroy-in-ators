@@ -50,8 +50,10 @@ var spell = new Gauntlet.SpellBook.Sphere();
       warrior.setWeapon(new Gauntlet.Dagger());
     }else if (pickWeapon === "broadSword") {
       warrior.setWeapon(new Gauntlet.BroadSword());
-    }else {
+    }else if (pickWeapon === "warAxe") {
       warrior.setWeapon(new Gauntlet.WarAxe());
+    }else if (pickWeapon === "theseHands"){
+      warrior.setWeapon(new Gauntlet.Weapon());
     }
     console.log("weapon", warrior);
   })
