@@ -50,6 +50,10 @@ var Gauntlet = (function(originalGauntlet){
     this.weapon = newWeapon;
   };
 
+  // originalGauntlet.Combatants.Player.prototype.setMaagic = function(magic) {
+  //   this.magic
+  // }
+
   originalGauntlet.Combatants.Player.prototype.setClass = function(newClass) {    
     this.class = new originalGauntlet.GuildHall[newClass]();
     this.health += this.class.healthBonus;
