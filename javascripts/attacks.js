@@ -83,31 +83,57 @@ var Gauntlet = (function(originalAttacks){
 
     let human = players[Object.keys(players)[0]];
     let monster = players[Object.keys(players)[1]];
+
+// The starting human/monster pictures
     let humanPic = "human.png";
     let monsterPic = "orc.png";
 
-    console.log(human.health, monster.health);
+// Sets the human and monster weapons
+
+    let humanWeapon = human.weapon.name;
+    let monsterWeapon = monster.weapon.name;
+
+    let weaponObject = {"dagger": "img/dagger.png", "broad sword": "img/broadsword.png", "war axe": "img/waraxe.png"};
+
+    let humanWeaponPic = weaponObject[humanWeapon];
+    let humanWeaponClass = `class="human-weapon-hold"`;
+    let monsterWeaponPic = weaponObject[monsterWeapon];
+    let monsterWeaponClass = `class="monster-weapon-hold"`;
 
     if (human.health === 0) {
       humanPic = "human-loser.png";
+      humanWeaponClass = `class="weapon-gone"`;
+
       monsterPic = "orc-winner.png";
+      monsterWeaponClass = `class="monster-weapon-winner"`;
+
       sentAttackButtonClicked = null;
     } else if (monster.health === 0) {
       humanPic = "human-winner.png";
+      humanWeaponClass = `class="human-weapon-winner"`;
+
       monsterPic = "orc-loser.png";
+      monsterWeaponClass = `class="weapon-gone"`;
+
       sentAttackButtonClicked = null;
     }
 
     if (sentAttackButtonClicked === true) {
-      humanPic = "human-attack.png";
+      humanWeaponClass = `class="human-weapon-attack"`;
+      monsterWeaponClass = `class="monster-weapon-hit"`;
       monsterPic = "orc-hit.png";
     } else if (sentAttackButtonClicked === false) {
       humanPic = "human-hit.png";
-      monsterPic = "orc-attack.png";
+      humanWeaponClass = `class="human-weapon-hit"`;
+      monsterWeaponClass = `class="monster-weapon-attack"`;
     }
 
-    $(".human-picture-holder").html(`<img class="human-picture" src="img/${humanPic}" alt="Human Picture">`);
-    $(".orc-picture-holder").html(`<img class="orc-picture" src="img/${monsterPic}" alt="Orc Picture">`);
+    $(".human-picture-holder").html(`
+      <img ${humanWeaponClass} src="${humanWeaponPic}" alt="Human Weapon Picture">
+      <img class="human-picture" src="img/${humanPic}" alt="Human Picture">`);
+    $(".orc-picture-holder").html(`
+      <img ${monsterWeaponClass} src="${monsterWeaponPic}" alt="Monster Weapon Picture">
+      <img class="orc-picture" src="img/${monsterPic}" alt="Orc Picture">`);
 
     $("#attack-text").html(`${sentReportStrings.attackString} <br> ${sentReportStrings.healthString}`);
 

@@ -146,13 +146,81 @@ body {
 }
 
 .human-picture {
-  position: fixed;
-  bottom: 30%;
-  left: 45%;
+    position: fixed;
+    bottom: 30%;
+    left: 42%;
 }
 
 .orc-picture {
   position: fixed;
   bottom: 30%;
-  left: 52%;
+  left: 55%;
+}
+
+.monster-weapon-hold {
+    position: fixed;
+    bottom: 44%;
+    left: 56%;
+    transform: rotate(-101deg);
+    transform-origin: 0% 50%;
+}
+
+.monster-weapon-hit {
+    position: fixed;
+    bottom: 40%;
+    left: 57%;
+    transform: rotate(-101deg);
+    transform-origin: 0% 50%;
+}
+
+.monster-weapon-attack {
+    position: fixed;
+    bottom: 44%;
+    left: 56%;
+    transform: rotate(-189deg);
+    transform-origin: 0% 50%;
+}
+
+.monster-weapon-winner {
+  position: fixed;
+  bottom: 44%;
+  left: 50%;
+  transform: rotate(-252deg);
+  transform-origin: 0% 50%;
+}
+
+.human-weapon-hold {
+    position: fixed;
+    bottom: 44%;
+    left: 46%;
+    transform: rotate(-74deg);
+    transform-origin: 0% 50%;
+}
+
+.human-weapon-hit {
+    position: fixed;
+    bottom: 40%;
+    left: 46%;
+    transform: rotate(-74deg);
+    transform-origin: 0% 50%;
+}
+
+.human-weapon-attack {
+    position: fixed;
+    bottom: 44%;
+    left: 46%;
+    transform: rotate(05deg);
+    transform-origin: 0% 50%;
+}
+
+.human-weapon-winner {
+    position: fixed;
+    bottom: 44%;
+    left: 58%;
+    transform: rotate(66deg);
+    transform-origin: 0% 50%;
+}
+
+.weapon-gone {
+  display: none;
 }
