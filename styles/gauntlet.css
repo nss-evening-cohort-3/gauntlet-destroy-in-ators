@@ -106,21 +106,53 @@ body {
 
 /*Start of Battleground Styling*/
 
+.battlefield-color {
+  height: 87vh;
+  background-image: linear-gradient(to top, #148F20 8%, #FFFFFF 60%, #41B2DB 100%);
+}
+
 .battleground-stats {
   display: flex;
   width: 90%;
   border: 2px solid black;
+  margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.battleground-bottom-report {
+  position: fixed;
+  bottom: 3%;
+  width: 100%;
 }
 
 #human-data, #monster-data {
   flex-direction: row;
   width: 40%;
   height: 100px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.9rem;
   border: 2px solid green;
   justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
 }
 
+.crowd {
+    vertical-align: middle;
+    width: 98%;
+    position: fixed;
+    bottom: 45%;
+}
+
+.human-picture {
+  position: fixed;
+  bottom: 30%;
+  left: 45%;
+}
+
+.orc-picture {
+  position: fixed;
+  bottom: 30%;
+  left: 52%;
+}

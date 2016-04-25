@@ -55,33 +55,59 @@ var Gauntlet = (function(originalAttacks){
       currentEnemy.health = 0;
       $("#attack-button").attr("disabled", "disabled"); 
       $("#attack-button").off();
+      $("#give-up-btn").attr("disabled", "disabled"); 
+      $("#give-up-btn").off();
+
     } else {
 
       reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage!`;
       reportStrings.healthString = `${currentEnemy.species} ${currentEnemy.class.name} has ${currentEnemy.health} hit points remaining`;
     }
 
-    Gauntlet.updateBattlefieldDOM(reportStrings);
+    Gauntlet.updateBattlefieldDOM(reportStrings, attackButtonClicked);
 
-    // clearTimeout();
+    clearTimeout();
 
     if (attackButtonClicked && (currentEnemy.health > 0)) {
       setTimeout(function() { 
         Gauntlet.weaponAttack(false);
-      }, 100);
+      }, 2000);
     }
-
-    return reportStrings;
 
   };
 
 // This updates the battlefield stats for both players on the DOM.
-  originalAttacks.updateBattlefieldDOM = function(sentReportStrings) {
+  originalAttacks.updateBattlefieldDOM = function(sentReportStrings, sentAttackButtonClicked) {
 
     let players = Gauntlet.getPlayers();
 
     let human = players[Object.keys(players)[0]];
     let monster = players[Object.keys(players)[1]];
+    let humanPic = "human.png";
+    let monsterPic = "orc.png";
+
+    console.log(human.health, monster.health);
+
+    if (human.health === 0) {
+      humanPic = "human-loser.png";
+      monsterPic = "orc-winner.png";
+      sentAttackButtonClicked = null;
+    } else if (monster.health === 0) {
+      humanPic = "human-winner.png";
+      monsterPic = "orc-loser.png";
+      sentAttackButtonClicked = null;
+    }
+
+    if (sentAttackButtonClicked === true) {
+      humanPic = "human-attack.png";
+      monsterPic = "orc-hit.png";
+    } else if (sentAttackButtonClicked === false) {
+      humanPic = "human-hit.png";
+      monsterPic = "orc-attack.png";
+    }
+
+    $(".human-picture-holder").html(`<img class="human-picture" src="img/${humanPic}" alt="Human Picture">`);
+    $(".orc-picture-holder").html(`<img class="orc-picture" src="img/${monsterPic}" alt="Orc Picture">`);
 
     $("#attack-text").html(`${sentReportStrings.attackString} <br> ${sentReportStrings.healthString}`);
 
@@ -92,6 +118,33 @@ var Gauntlet = (function(originalAttacks){
     $("#monster-data").html(`
       <p>Player: ${monster.species} ${monster.class.name} </p>
       <p>Health: ${monster.health}`);
+  };
+
+  // This is what happens when you give up!
+  originalAttacks.giveUp = function() {
+
+    let players = Gauntlet.getPlayers();
+    let human = players[Object.keys(players)[0]];
+
+// Sets human's health to zero
+    human.health = 0;
+
+// Disables the attack and GiveUp buttons
+    $("#attack-button").attr("disabled", "disabled"); 
+    $("#attack-button").off();
+    $("#give-up-btn").attr("disabled", "disabled"); 
+    $("#give-up-btn").off();
+
+// Contains the attack string .attackString and the health string .healthString
+    var reportStrings = {};
+
+    reportStrings.attackString = `You Gave Up Fool!`;
+    reportStrings.attackString += `There is no giving up on the battlefield!`;
+    reportStrings.healthString = `You are dead! The Orc is the winner`; 
+
+//Updates the DOM
+    Gauntlet.updateBattlefieldDOM(reportStrings, null);
+
   };
 
 // Spell attack function
