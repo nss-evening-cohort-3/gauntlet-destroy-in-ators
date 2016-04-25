@@ -128,12 +128,11 @@ var Gauntlet = (function(originalAttacks){
       monsterWeaponClass = `class="monster-weapon-attack"`;
     }
 
-    $(".human-picture-holder").html(`
+    $(".main-combatants-holder").html(`
       <img ${humanWeaponClass} src="${humanWeaponPic}" alt="Human Weapon Picture">
-      <img class="human-picture" src="img/${humanPic}" alt="Human Picture">`);
-    $(".orc-picture-holder").html(`
+      <img class="human-picture" src="img/${humanPic}" alt="Human Picture">
       <img ${monsterWeaponClass} src="${monsterWeaponPic}" alt="Monster Weapon Picture">
-      <img class="orc-picture" src="img/${monsterPic}" alt="Orc Picture">`);
+      <img class="monster-picture" src="img/${monsterPic}" alt="Monster Picture">`);
 
     $("#attack-text").html(`${sentReportStrings.attackString} <br> ${sentReportStrings.healthString}`);
 

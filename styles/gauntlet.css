@@ -16,8 +16,6 @@ body {
   min-width: 500px;
 }
 
-
-
 /*
   Section styles
  */
@@ -114,7 +112,6 @@ body {
 .battleground-stats {
   display: flex;
   width: 90%;
-  border: 2px solid black;
   margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
@@ -132,7 +129,6 @@ body {
   height: 100px;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.9rem;
-  border: 2px solid green;
   justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
@@ -145,80 +141,90 @@ body {
     bottom: 45%;
 }
 
-.human-picture {
-    position: fixed;
-    bottom: 30%;
-    left: 42%;
+.main-combatants-holder {
+  display: inline-block;
+  position: absolute;
+  bottom: 29vh;
+  width: 95%;
+  height: 220px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.orc-picture {
-  position: fixed;
-  bottom: 30%;
-  left: 55%;
+.human-picture {
+  position: absolute;
+  bottom: 0px;
+  left: 411px;
+}
+
+.monster-picture {
+  position: absolute;
+  bottom: 0px;
+  left: 532px;
 }
 
 .monster-weapon-hold {
-    position: fixed;
-    bottom: 44%;
-    left: 56%;
-    transform: rotate(-101deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 120px;
+  left: 545px;
+  transform: rotate(-101deg);
+  transform-origin: 0% 50%;
 }
 
 .monster-weapon-hit {
-    position: fixed;
-    bottom: 40%;
-    left: 57%;
-    transform: rotate(-101deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 88px;
+  left: 558px;
+  transform: rotate(-101deg);
+  transform-origin: 0% 50%;
 }
 
 .monster-weapon-attack {
-    position: fixed;
-    bottom: 44%;
-    left: 56%;
-    transform: rotate(-189deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 124px;
+  left: 550px;
+  transform: rotate(-189deg);
+  transform-origin: 0% 50%;
 }
 
 .monster-weapon-winner {
-  position: fixed;
-  bottom: 44%;
-  left: 50%;
+  position: absolute;
+  bottom: 124px;
+  left: 510px;
   transform: rotate(-252deg);
   transform-origin: 0% 50%;
 }
 
 .human-weapon-hold {
-    position: fixed;
-    bottom: 44%;
-    left: 46%;
-    transform: rotate(-74deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 123px;
+  left: 463px;
+  transform: rotate(-74deg);
+  transform-origin: 0% 50%;
 }
 
 .human-weapon-hit {
-    position: fixed;
-    bottom: 40%;
-    left: 46%;
-    transform: rotate(-74deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 93px;
+  left: 458px;
+  transform: rotate(-74deg);
+  transform-origin: 0% 50%;
 }
 
 .human-weapon-attack {
-    position: fixed;
-    bottom: 44%;
-    left: 46%;
-    transform: rotate(05deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 132px;
+  left: 458px;
+  transform: rotate(05deg);
+  transform-origin: 0% 50%;
 }
 
 .human-weapon-winner {
-    position: fixed;
-    bottom: 44%;
-    left: 58%;
-    transform: rotate(66deg);
-    transform-origin: 0% 50%;
+  position: absolute;
+  bottom: 123px;
+  left: 571px;
+  transform: rotate(66deg);
+  transform-origin: 0% 50%;
 }
 
 .weapon-gone {
