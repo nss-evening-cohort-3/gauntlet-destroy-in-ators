@@ -43,16 +43,14 @@ var Gauntlet = (function(originalAttacks){
 
 // Sets the overall weapon damage depending on where the enemy is hit
     let overallDamage = Math.floor(currentAttacker.weapon.damage * damageMultiplier);
-    console.log("damage", currentAttacker.weapon.damage)
 
 // Reduces the overall health of the enemy after the attack calculation is completed
     currentEnemy.health = currentEnemy.health - overallDamage;
 
 // Checks to see if the health of the enemy is at or below 0 and changes the reporting string acordingly.
     if (currentEnemy.health <= 0) {
-      reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage!<br>`;
-      reportStrings.attackString += `${currentEnemy.species} ${currentEnemy.class.name} has died!`;
-      reportStrings.healthString = `No Health is Left! You are dead. Winner, winner chicken dinner! ` + `${currentAttacker.class.name}`; 
+      reportStrings.attackString = `${currentAttacker.species} ${currentAttacker.class.name} hits ${currentEnemy.species} ${currentEnemy.class.name} in the ${randomLimb} for ${overallDamage} points of damage and kills him!`;
+      reportStrings.healthString = `Winner, winner chicken dinner! ${currentAttacker.species} ${currentAttacker.class.name} is the winner!`; 
       currentEnemy.health = 0;
       $("#attack-button").attr("disabled", "disabled"); 
       $("#attack-button").off();
@@ -139,12 +137,14 @@ var Gauntlet = (function(originalAttacks){
     $("#attack-text").html(`${sentReportStrings.attackString} <br> ${sentReportStrings.healthString}`);
 
     $("#human-data").html(`
-      <p>Player: ${human.species} ${human.class.name} </p>
-      <p>Health: ${human.health}`);
+      <p>"${human.name}"</p>
+      <p>${human.species} - ${human.class.name} </p>
+      <p>Health: ${human.health}</p>`);
     
     $("#monster-data").html(`
-      <p>Player: ${monster.species} ${monster.class.name} </p>
-      <p>Health: ${monster.health}`);
+      <p>"Lothar the Destroyer"</p>
+      <p>${monster.species} - ${monster.class.name} </p>
+      <p>Health: ${monster.health}</p>`);
   };
 
   // This is what happens when you give up!

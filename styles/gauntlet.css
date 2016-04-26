@@ -119,19 +119,28 @@ body {
 
 .battleground-bottom-report {
   position: fixed;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.9rem;
   bottom: 3%;
-  width: 100%;
+  width: 95%;
+}
+
+.eight-bit {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.1rem;
 }
 
 #human-data, #monster-data {
-  flex-direction: row;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
   height: 100px;
   font-family: 'Press Start 2P', cursive;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   justify-content: space-between;
-  margin-right: auto;
-  margin-left: auto;
+  align-items: center;
+/*  margin-right: auto;
+  margin-left: auto;*/
 }
 
 .crowd {
@@ -146,7 +155,8 @@ body {
   position: absolute;
   width: 500px;
   height: 220px;
-  transform: translate(50%,82%);
+  left: 30%;
+  bottom: 30%;
 }
 
 .human-picture {
