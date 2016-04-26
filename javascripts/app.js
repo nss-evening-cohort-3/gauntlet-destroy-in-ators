@@ -18,11 +18,8 @@ console.log(orc.toString());
 Gauntlet.setPlayers(orc);
 
 
-/*
-  Test code to generate a spell
- */
+
 var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
 
   /*
     Show the initial view that accepts player name
@@ -38,28 +35,28 @@ console.log("spell: ", spell.toString());
   $(".classChoice").on("click", function() {
     var humanClass = this.id
 
-if (humanClass === "Surprise") {
-   warrior.generateClass();
-} else {
-   warrior.setClass(humanClass);
-}
-
+     if (humanClass === "Surprise") {
+      warrior.generateClass();
+    }else {
+      warrior.setClass(humanClass);
+    }
       console.log("Player", warrior)      
   })
 
   $(".weaponClass").on("click", function() {
     var pickWeapon = this.id
+    warrior.setWeapon(pickWeapon)
 
-    switch(pickWeapon) {
-      case "dagger":
-        warrior.setWeapon(new Gauntlet.Dagger());
-        break;
-      case "broadSword":
-        warrior.setWeapon(new Gauntlet.BroadSword());
-        break;
-      case "warAxe":
-        warrior.setWeapon(new Gauntlet.WarAxe());
-        break;
+    if (pickWeapon === "dagger") {
+      warrior.setWeapon(new Gauntlet.Dagger());
+    }else if (pickWeapon === "broadSword") {
+      warrior.setWeapon(new Gauntlet.BroadSword());
+    }else if (pickWeapon === "warAxe") {
+      warrior.setWeapon(new Gauntlet.WarAxe());
+    }else if (pickWeapon === "theseHands"){
+      warrior.setWeapon(new Gauntlet.Weapon());
+    }else if (pickWeapon === "Sphere") {
+      warrior.setWeapon(new Gauntlet.SpellBook.Sphere());
     }
     console.log("weapon", warrior);
   })
@@ -107,7 +104,6 @@ if (humanClass === "Surprise") {
   $("#give-up-btn").click(function(e) {
     Gauntlet.giveUp();
   });
-
 
 
 });

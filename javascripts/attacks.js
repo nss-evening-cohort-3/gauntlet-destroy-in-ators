@@ -43,6 +43,7 @@ var Gauntlet = (function(originalAttacks){
 
 // Sets the overall weapon damage depending on where the enemy is hit
     let overallDamage = Math.floor(currentAttacker.weapon.damage * damageMultiplier);
+    console.log("damage", currentAttacker.weapon.damage)
 
 // Reduces the overall health of the enemy after the attack calculation is completed
     currentEnemy.health = currentEnemy.health - overallDamage;
@@ -133,6 +134,7 @@ var Gauntlet = (function(originalAttacks){
       <img class="human-picture" src="img/${humanPic}" alt="Human Picture">
       <img ${monsterWeaponClass} src="${monsterWeaponPic}" alt="Monster Weapon Picture">
       <img class="monster-picture" src="img/${monsterPic}" alt="Monster Picture">`);
+
 
     $("#attack-text").html(`${sentReportStrings.attackString} <br> ${sentReportStrings.healthString}`);
 
