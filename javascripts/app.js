@@ -54,6 +54,8 @@ var spell = new Gauntlet.SpellBook.Sphere();
       warrior.setWeapon(new Gauntlet.WarAxe());
     }else if (pickWeapon === "theseHands"){
       warrior.setWeapon(new Gauntlet.Weapon());
+    }else if (pickWeapon === "Sphere") {
+      warrior.setWeapon(new Gauntlet.SpellBook.Sphere());
     }
     console.log("weapon", warrior);
   })
