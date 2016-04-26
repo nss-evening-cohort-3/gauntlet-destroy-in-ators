@@ -228,3 +228,8 @@ body {
 .weapon-gone {
   display: none;
 }
+
+#gauntlet_pic{
+  width: 450px;
+  height: 400px;
+}
