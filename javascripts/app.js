@@ -28,10 +28,11 @@ var spell = new Gauntlet.SpellBook.Sphere();
 
   $(".classChoice").on("click", function() {
     var humanClass = this.id
-
+    console.log("humanClass",humanClass );
      if (humanClass === "Surprise") {
       warrior.generateClass();
-    }else {
+    }
+    else {
       warrior.setClass(humanClass);
     }
       console.log("Player", warrior)      
@@ -68,7 +69,11 @@ var spell = new Gauntlet.SpellBook.Sphere();
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        console.log("warrior",warrior );
+        if(warrior.class === null){
+          alert("You Must Select A Path");
+          moveAlong = false;}else
+          {moveAlong = true;}
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
