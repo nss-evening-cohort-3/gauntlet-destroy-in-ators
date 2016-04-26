@@ -34,6 +34,7 @@ var spell = new Gauntlet.SpellBook.Sphere();
 
   $(".classChoice").on("click", function() {
     var humanClass = this.id
+
      if (humanClass === "Surprise") {
       warrior.generateClass();
     }else {
@@ -79,8 +80,6 @@ var spell = new Gauntlet.SpellBook.Sphere();
         moveAlong = ($("#player-name").val() !== "");
         Gauntlet.updateBattlefieldDOM({"attackString": "Let the battle Begin", "healthString": ""});
         break;
-      case "give_up":
-        alert("You gave up fool!");
     }
 
     if (moveAlong) {
@@ -100,9 +99,11 @@ var spell = new Gauntlet.SpellBook.Sphere();
 
   $("#attack-button").click(function(e) {
     var domStrings = Gauntlet.weaponAttack(true);
-    Gauntlet.updateBattlefieldDOM(domStrings);
   });
 
+  $("#give-up-btn").click(function(e) {
+    Gauntlet.giveUp();
+  });
 
 
 });
