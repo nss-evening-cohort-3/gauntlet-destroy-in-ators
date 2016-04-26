@@ -225,6 +225,14 @@ body {
   transform-origin: 0% 50%;
 }
 
+.human-magic {
+  height: 10px
+  width: 10px;
+  position: absolute;
+  bottom: 123px;
+  left: 204px;
+}
+
 .weapon-gone {
   display: none;
 }
