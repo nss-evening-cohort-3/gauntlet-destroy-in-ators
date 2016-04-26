@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Gauntlet</title>
+  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
@@ -182,34 +183,37 @@
     </section>
 
     <section id="battleground" class="card card--battleground">
-      <div class="card__prompt">
-        <div>Welcome to the Battleground</div>
+
+      <div class="battleground-body battlefield-color">
+        <div class="card__prompt">
+          <div>Welcome to the Battleground</div>
+        </div>
+        <img class="crowd" src="img/crowd.png" alt="Crowd Picture">
+        
+        <div class="main-combatants-holder"></div>
+
+        <div class="battleground-stats">
+          <div id="human-data"></div>
+          <div id="monster-data"></div>
+        </div>
+
+        <div class="card__button battleground-bottom-report">
+          <div id="attack-text">Let the Battle Begin!</div>
+          <a id="attack-button" class="card__link btn btn--big btn--orange" 
+             href="#" 
+             next="">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Attack!</span>
+          </a>
+
+          <a id="give-up-btn" class="card__link btn btn--big btn--orange" 
+             href="#" 
+             next="give_up">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Give Up!</span>
+          </a>
+        </div>
       </div>
-
-      <div class="battleground-stats">
-        <div id="human-data"></div>
-        <div id="monster-data"></div>
-      </div>
-        <div id="attack-text">Let the Battle Begin!</div>
-
-      <div class="card__button">
-
-        <a id="attack-button" class="card__link btn btn--big btn--orange" 
-           href="#" 
-           next="">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Attack!</span>
-        </a>
-
-
-        <a class="card__link btn btn--big btn--orange" 
-           href="#" 
-           next="give_up">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Give Up!</span>
-        </a>
-      </div>
-
     </section>
 
   </article>
@@ -217,6 +221,7 @@
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/weapons.js"></script>
+  <script src="javascripts/graphicalDOM.js"></script>
   <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/enemies.js"></script>
