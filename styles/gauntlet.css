@@ -28,6 +28,8 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.1rem;
 }
 
 .card__button {
@@ -53,6 +55,8 @@ body {
   font-weight: 600;
   padding: 10px 5px;
   min-width: 260px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.1rem;
 }
 
 .btn--orange {
@@ -238,6 +242,8 @@ body {
 .weapon-gone {
   display: none;
 }
+
+/*Opening Page Style*/
 
 #gauntlet_pic{
   width: 450px;
