@@ -52,7 +52,7 @@ var Gauntlet = (function(originalGauntlet){
 
   originalGauntlet.Combatants.Player.prototype.setMagic = function(magic) {
     this.magic = magic;
-  }
+  };
 
   originalGauntlet.Combatants.Player.prototype.setClass = function(newClass) {    
     this.class = new originalGauntlet.GuildHall[newClass]();

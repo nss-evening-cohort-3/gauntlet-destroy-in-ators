@@ -120,7 +120,7 @@ var Gauntlet = (function(originalAttacks){
     if (sentAttackButtonClicked === true) {
 
       if (humanWeapon === "bare hands") {
-        humanPic = "human-hands.png"
+        humanPic = "human-hands.png";
       }
       humanWeaponClass = `class="human-weapon-attack"`;
       monsterWeaponClass = `class="monster-weapon-hit"`;
