@@ -6,18 +6,12 @@ $(document).ready(function() {
   Test code to generate a human player and an orc player
  */
 var warrior = new Gauntlet.Combatants.Human();
-// warrior.setWeapon(new Gauntlet.WarAxe());
-// warrior.generateClass();  // This will be used for "Surprise me" option
-// console.log(warrior.toString());
 Gauntlet.setPlayers(warrior);
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
 orc.setWeapon(new Gauntlet.BroadSword());
-console.log(orc.toString());
 Gauntlet.setPlayers(orc);
-
-
 
 var spell = new Gauntlet.SpellBook.Sphere();
 
@@ -34,10 +28,11 @@ var spell = new Gauntlet.SpellBook.Sphere();
 
   $(".classChoice").on("click", function() {
     var humanClass = this.id
-
+    console.log("humanClass",humanClass );
      if (humanClass === "Surprise") {
       warrior.generateClass();
-    }else {
+    }
+    else {
       warrior.setClass(humanClass);
     }
       console.log("Player", warrior)      
@@ -74,7 +69,11 @@ var spell = new Gauntlet.SpellBook.Sphere();
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        console.log("warrior",warrior );
+        if(warrior.class === null){
+          alert("You Must Select A Path");
+          moveAlong = false;}else
+          {moveAlong = true;}
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
