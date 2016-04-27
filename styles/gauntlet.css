@@ -113,6 +113,7 @@ body {
   display: flex;
   width: 90%;
   margin-top: 3%;
+  justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
 }
@@ -137,10 +138,11 @@ body {
   height: 100px;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.75rem;
-  justify-content: space-between;
   align-items: center;
-/*  margin-right: auto;
-  margin-left: auto;*/
+  border-radius: 5px;
+  border: 2px solid slategray;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 5px;
 }
 
 .crowd {

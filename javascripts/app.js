@@ -13,7 +13,7 @@ orc.generateClass();
 orc.setWeapon(new Gauntlet.BroadSword());
 Gauntlet.setPlayers(orc);
 
-var spell = new Gauntlet.SpellBook.Sphere();
+// var spell = new Gauntlet.SpellBook.Sphere();
 
   /*
     Show the initial view that accepts player name
@@ -23,24 +23,22 @@ var spell = new Gauntlet.SpellBook.Sphere();
   // Display Name
   $("#nameChoice").on("click", function() {
     warrior.name = $("#player-name").val();
-    $("#battleName").append(warrior.name);
+    // $("#battleName").append(warrior.name);
   });
 
   $(".classChoice").on("click", function() {
-    var humanClass = this.id
-    console.log("humanClass",humanClass );
+    var humanClass = this.id;
      if (humanClass === "Surprise") {
       warrior.generateClass();
     }
     else {
       warrior.setClass(humanClass);
     }
-      console.log("Player", warrior)      
-  })
+  });
 
   $(".weaponClass").on("click", function() {
-    var pickWeapon = this.id
-    warrior.setWeapon(pickWeapon)
+    var pickWeapon = this.id;
+    warrior.setWeapon(pickWeapon);
 
     if (pickWeapon === "dagger") {
       warrior.setWeapon(new Gauntlet.Dagger());
@@ -54,7 +52,7 @@ var spell = new Gauntlet.SpellBook.Sphere();
       warrior.setWeapon(new Gauntlet.SpellBook.Sphere());
     }
     console.log("weapon", warrior);
-  })
+  });
   
   /*
     When any button with card__link class is clicked,

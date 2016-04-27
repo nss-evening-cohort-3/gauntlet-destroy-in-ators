@@ -92,7 +92,7 @@ var Gauntlet = (function(originalAttacks){
     let humanWeapon = human.weapon.name;
     let monsterWeapon = monster.weapon.name;
 
-    let weaponObject = {"dagger": "img/dagger.png", "broad sword": "img/broadsword.png", "war axe": "img/waraxe.png", "sphere": "img/magic.gif"};
+    let weaponObject = {"dagger": "img/dagger.png", "broad sword": "img/broadsword.png", "war axe": "img/waraxe.png", "bare hands": "img/noweapon.png", "sphere": "img/magic.gif"};
 
     let humanWeaponPic = weaponObject[humanWeapon];
     let humanWeaponClass = `class="human-weapon-hold"`;
@@ -121,6 +121,10 @@ var Gauntlet = (function(originalAttacks){
     }
 
     if (sentAttackButtonClicked === true) {
+
+      if (humanWeapon === "bare hands") {
+        humanPic = "human-hands.png";
+      }
       humanWeaponClass = `class="human-weapon-attack"`;
       monsterWeaponClass = `class="monster-weapon-hit"`;
       monsterPic = "orc-hit.png";
