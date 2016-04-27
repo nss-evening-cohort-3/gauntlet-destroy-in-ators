@@ -100,7 +100,7 @@ var Gauntlet = (function(originalAttacks){
     let monsterWeaponPic = weaponObject[monsterWeapon];
     let monsterWeaponClass = `class="monster-weapon-hold"`;
     if (humanWeapon === Gauntlet.SpellBook.Spell) {
-      humanWeaponClass = `class="human-magic"`
+      humanWeaponClass = `class="human-magic"`;
     }
 
     if (human.health === 0) {

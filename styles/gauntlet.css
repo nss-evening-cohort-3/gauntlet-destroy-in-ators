@@ -241,3 +241,10 @@ body {
   width: 450px;
   height: 400px;
 }
+.fatality {
+  -webkit-animation: fadein 2s;
+  vertical-align: middle;
+  width: 70%;
+  position: fixed;
+  bottom: 45%;
+}
