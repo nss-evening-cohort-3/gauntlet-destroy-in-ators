@@ -92,12 +92,15 @@ var Gauntlet = (function(originalAttacks){
     let humanWeapon = human.weapon.name;
     let monsterWeapon = monster.weapon.name;
 
-    let weaponObject = {"dagger": "img/dagger.png", "broad sword": "img/broadsword.png", "war axe": "img/waraxe.png"};
+    let weaponObject = {"dagger": "img/dagger.png", "broad sword": "img/broadsword.png", "war axe": "img/waraxe.png", "sphere": "img/magic.gif"};
 
     let humanWeaponPic = weaponObject[humanWeapon];
     let humanWeaponClass = `class="human-weapon-hold"`;
     let monsterWeaponPic = weaponObject[monsterWeapon];
     let monsterWeaponClass = `class="monster-weapon-hold"`;
+    if (humanWeapon === Gauntlet.SpellBook.Spell) {
+      humanWeaponClass = `class="human-magic"`;
+    }
 
     if (human.health === 0) {
       humanPic = "human-loser.png";
